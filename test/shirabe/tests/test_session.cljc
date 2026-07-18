@@ -5,7 +5,7 @@
             [clojure.java.io :as io]
             [shirabe.methods.session :as session]))
 
-(def fx (edn/read-string (slurp (io/resource "shirabe/data/fixtures/shimada-aoyama.kotoba.edn"))))
+(def fx (edn/read-string (slurp (io/file (System/getProperty "user.dir") "data" "fixtures" "shimada-aoyama.kotoba.edn"))))
 (defn fixture-fetcher [_] (get-in fx [:search "*"]))
 (def fixture-infer (with-meta (fn [_] (:answer fx)) {:model-id "fixture:gemma4@127.0.0.1:11434"}))
 

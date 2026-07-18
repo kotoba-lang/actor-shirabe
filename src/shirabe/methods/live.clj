@@ -84,7 +84,7 @@
 (defn- arg [args flag] (let [i (.indexOf args flag)] (when (>= i 0) (nth args (inc i)))))
 
 (def log-path
-  (str (-> (io/file *file*) .getParentFile .getParentFile) "/data/persisted/shirabe.datoms.kotoba.edn"))
+  (str (io/file (System/getProperty "user.dir") "data" "persisted" "shirabe.datoms.kotoba.edn")))
 
 (defn -main [& args]
   (when (or (empty? args) (str/starts-with? (first args) "--"))

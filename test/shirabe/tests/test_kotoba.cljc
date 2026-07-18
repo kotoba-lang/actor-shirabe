@@ -7,7 +7,7 @@
             [shirabe.methods.session :as session]
             [shirabe.methods.kotoba :as kotoba]))
 
-(def fx (edn/read-string (slurp (io/resource "shirabe/data/fixtures/shimada-aoyama.kotoba.edn"))))
+(def fx (edn/read-string (slurp (io/file (System/getProperty "user.dir") "data" "fixtures" "shimada-aoyama.kotoba.edn"))))
 (defn fetcher [_] (get-in fx [:search "*"]))
 (def infer (with-meta (fn [_] (:answer fx)) {:model-id "fixture:gemma4@127.0.0.1:11434"}))
 (def s (session/research (:question fx) fetcher infer (:asof fx)))
