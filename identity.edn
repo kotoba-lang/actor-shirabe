@@ -1,2 +1,3 @@
-{:repository/id "etzhayyim/com-etzhayyim-shirabe" :actor/id "shirabe"
- :canonical-path "orgs/etzhayyim/com-etzhayyim-shirabe" :canonical-format :edn}
+{:repository/id "kotoba-lang/actor-shirabe" :actor/id "shirabe"
+ :canonical-path "orgs/kotoba-lang/actor-shirabe" :canonical-format :edn
+ :compatibility-repository "etzhayyim/com-etzhayyim-shirabe"}

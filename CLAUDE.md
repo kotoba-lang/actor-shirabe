@@ -6,6 +6,9 @@
 local-Ollama = Murakumo-conformant) · 2606131300 (clj-port first-class). **Status**: 🟢
 R1 live-verified.
 
+Canonical repository: `kotoba-lang/actor-shirabe`. The historical etzhayyim
+DID, namespace, and GitHub URL remain compatibility identities.
+
 shirabe ("調べ" = to look into / investigate) is the **LLM/answer layer over web search** the
 roster was missing. The observatory actors (danjo/kanjō/tsumugi/…) ingest disclosed corpora;
 the kotoba web search (ADR-2606012300) indexes Common Crawl. None of them **answer a person's
