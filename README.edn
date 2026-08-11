@@ -1,0 +1,10 @@
+{:repo/id "kotoba-lang/actor-shirabe"
+ :repo/plane :role
+ :repo/role :governed-executable-actor
+ :repo/execution :on-demand
+ :actor/id :shirabe
+ :actor/identity "did:web:etzhayyim.com:actor:shirabe"
+ :repo/boundary {:subject :citation-grounded-public-web-research
+                 :effects :read-only
+                 :does-not-own [:etzhayyim-charter :etzhayyim-council :organism-state]
+                 :compatibility-repository "etzhayyim/com-etzhayyim-shirabe"}}
