@@ -1,7 +1,7 @@
 (ns shirabe.tests.test-synthesize
   "shirabe — synthesize tests (G2 Murakumo-only allowlist / prompt / citations). kotoba-clj."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [shirabe.methods.synthesize :as s]))
 
 (def ev [{:rank 1 :title "T1" :url "https://x/1" :snippet "snip one" :retrieved-at "d"}
