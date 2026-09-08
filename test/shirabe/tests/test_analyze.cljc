@@ -1,7 +1,7 @@
 (ns shirabe.tests.test-analyze
   "shirabe — analyze/plan tests (question → research plan). kotoba-clj, runs under bb."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [shirabe.methods.analyze :as a]))
 
 (deftest freshness-entity-question

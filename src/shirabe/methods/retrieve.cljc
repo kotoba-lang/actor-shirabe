@@ -16,7 +16,7 @@
       tests pass a fixture fetcher; the live web leg (live.clj) is an operator/member step.
 
   A `fetcher` is any fn `(fn [query] -> [{:title _ :url _ :snippet _} ...])`."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.set :as set]))
 
 (def top-k 6)   ;; G5 — bounded evidence; a synthesis prompt is not a firehose
@@ -31,7 +31,7 @@
   (str "b" (subs (sha256-hex (or text "")) 0 32)))
 
 (defn- tokens [s]
-  (set (re-seq #"[0-9A-Za-z]+|[぀-ヿ㐀-鿿豈-﫿]" (str/lower-case (str s)))))
+  (set (re-seq #"[0-9A-Za-z]+|[぀-ヿ㐀-鿿豈-﫿]" (str/lower (str s)))))
 
 (defn- overlap [query item]
   (count (set/intersection (tokens query)

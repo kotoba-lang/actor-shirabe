@@ -1,7 +1,7 @@
 (ns shirabe.tests.test-retrieve
   "shirabe — retrieve tests (dedup / rank / cap / provenance / G7). kotoba-clj."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [shirabe.methods.retrieve :as r]))
 
 (deftest g7-fetcher-required

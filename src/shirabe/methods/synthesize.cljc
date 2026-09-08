@@ -18,7 +18,7 @@
       adapter (live.clj make-infer) is an explicit operator/member leg.
 
   An `infer` is any fn `(fn [prompt] -> string)`; attach {:model-id _} as metadata."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ── G2: the ONLY inference hosts a religious-corp caller may use (ADR-2605215000).
 (def allowed-infer-hosts
@@ -115,10 +115,10 @@
    (if (empty? evidence)
      {:answer "" :model "" :citations [] :sources [] :insufficient true :charter-ok true}
      (let [raw (str/trim (or (infer (build-prompt question evidence lang asof)) ""))
-          low (str/lower-case raw)]
+          low (str/lower raw)]
       {:answer raw
        :model (or (:model-id (meta infer)) "murakumo:gemma4")
        :citations (cited raw (count evidence))
        :sources (mapv (fn [e] {:rank (:rank e) :url (:url e) :title (:title e)}) evidence)
-       :insufficient (str/starts-with? (str/upper-case raw) "INSUFFICIENT")
+       :insufficient (str/starts-with? (str/upper raw) "INSUFFICIENT")
        :charter-ok (not (boolean (some #(str/includes? low %) prohibited)))}))))

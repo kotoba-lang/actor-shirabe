@@ -17,7 +17,7 @@
     G2 — a persisted model id carrying an @host MUST be Murakumo-fleet (structural check).
     G6 — privacy. `:shirabe.session/member` is emitted ONLY when a member SIGNED the session;
       an unsigned/anonymous research session binds NO identity."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             [clojure.java.io :as io]
             [shirabe.methods.synthesize :as synthesize]))

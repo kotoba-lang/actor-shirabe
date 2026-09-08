@@ -1,7 +1,7 @@
 (ns shirabe.tests.test-kotoba
   "shirabe — kotoba Datomic write-path tests ([:db/add] shape / G2 / G6 / commit-DAG). kotoba-clj."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             [clojure.java.io :as io]
             [shirabe.methods.session :as session]

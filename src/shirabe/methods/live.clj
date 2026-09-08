@@ -20,7 +20,7 @@
             [cheshire.core :as json]
             [clojure.edn :as edn]
             [clojure.java.io :as io]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 ;; ── G1: read-only public-web search (DuckDuckGo HTML). Best-effort, fail-soft. ──
 (def ^:private ddg-re

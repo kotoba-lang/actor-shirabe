@@ -16,7 +16,7 @@
 
   kotoba-clj (ADR-2606131300): pure fns, EDN-native, runs under babashka + the kotoba
   Clojure engine. Idiomatic clj keys (:question/:lang/:qtype/:freshness/:subqueries)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ── freshness signal: the answer depends on CURRENT state (hours / price / weather /
 ;;    news / availability). These questions MUST hit the live web leg; a stale Datom-log
@@ -40,7 +40,7 @@
 (defn- cjk? [s] (boolean (re-find #"[぀-鿿豈-﫿]" (str s))))
 
 (defn- has? [text needles]
-  (let [low (str/lower-case (str text))]
+  (let [low (str/lower (str text))]
     (boolean (some #(str/includes? low %) needles))))
 
 (defn- add-uniq
