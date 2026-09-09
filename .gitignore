@@ -3,3 +3,6 @@ data/persisted/
 out/
 
 .cpcache/
+
+# nbb dependency cache -- a build artifact, not source
+.nbb/
