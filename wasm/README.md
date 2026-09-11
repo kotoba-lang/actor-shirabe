@@ -27,7 +27,7 @@ The reference run that proves the loop end-to-end today is the babashka driver:
 
 ```bash
 # from repo root
-bb --classpath 20-actors 20-actors/shirabe/methods/live.clj "青山の島田は今日やっている?" --asof 2026-06-13
+kbb --classpath 20-actors 20-actors/shirabe/methods/live.clj "青山の島田は今日やっている?" --asof 2026-06-13
 ```
 
 which performs a LIVE DuckDuckGo search → LIVE gemma 4 E4B (local Ollama, Murakumo-conformant)
