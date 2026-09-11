@@ -1,0 +1,23 @@
+{:format :kotoba.cljk-origin/v1
+ :renamed-on "2026-09-11"
+ :decision "adr-2609111500-cljk-rename-all-clojure-source (com-junkawasaki/root 90-docs/adr; owner instruction 2026-09-11)"
+ :rule "value = the extension the file had before the rename. A path ending in .clj.cljk or .cljs.cljk kept it in the name because both platform files existed (or the plain target was taken)."
+ :origins
+ {"bin/lint.cljk" ".cljs"
+  "run_tests.cljk" ".clj"
+  "src/shirabe/cells/social_post/state_machine.cljk" ".cljc"
+  "src/shirabe/methods/analyze.cljk" ".cljc"
+  "src/shirabe/methods/kotoba.cljk" ".cljc"
+  "src/shirabe/methods/live.cljk" ".clj"
+  "src/shirabe/methods/retrieve.cljk" ".cljc"
+  "src/shirabe/methods/session.cljk" ".cljc"
+  "src/shirabe/methods/social.cljk" ".cljc"
+  "src/shirabe/methods/synthesize.cljk" ".cljc"
+  "src/shirabe/murakumo.cljk" ".cljc"
+  "test/shirabe/murakumo_test.cljk" ".cljc"
+  "test/shirabe/repository_contract_test.cljk" ".clj"
+  "test/shirabe/tests/test_analyze.cljk" ".cljc"
+  "test/shirabe/tests/test_kotoba.cljk" ".cljc"
+  "test/shirabe/tests/test_retrieve.cljk" ".cljc"
+  "test/shirabe/tests/test_session.cljk" ".cljc"
+  "test/shirabe/tests/test_synthesize.cljk" ".cljc"}}
