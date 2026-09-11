@@ -10,5 +10,5 @@ or submits forms. It owns no etzhayyim Charter, Council, or organism state.
 Existing `did:web:etzhayyim.com:actor:shirabe`, AT Protocol namespaces,
 Radicle identity, and former GitHub URL remain compatibility identities.
 
-See `CLAUDE.md` for the gates and `clojure -M:test` for the executable contract
+See `CLAUDE.md` for the gates and `kbb -M:test` for the executable contract
 suite.

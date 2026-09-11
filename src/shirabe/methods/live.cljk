@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 (ns shirabe.methods.live
   "shirabe 調べ — LIVE driver (the G7-gated operator/member leg). ADR-2606131600.
 
@@ -11,8 +11,8 @@
 
   This is an EXPLICIT operator/member step — never a cron; the pure loop never calls it (G7).
 
-    bb --classpath 20-actors 20-actors/shirabe/methods/live.clj \"青山の島田は今日やっている?\" --asof 2026-06-13
-    bb --classpath 20-actors 20-actors/shirabe/methods/live.clj \"<q>\" --evidence <file.edn> [--infer http://127.0.0.1:11434]"
+    kbb --classpath 20-actors 20-actors/shirabe/methods/live.clj \"青山の島田は今日やっている?\" --asof 2026-06-13
+    kbb --classpath 20-actors 20-actors/shirabe/methods/live.clj \"<q>\" --evidence <file.edn> [--infer http://127.0.0.1:11434]"
   (:require [shirabe.methods.session :as session]
             [shirabe.methods.synthesize :as synth]
             [shirabe.methods.kotoba :as kotoba]

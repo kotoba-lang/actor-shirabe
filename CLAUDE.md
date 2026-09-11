@@ -83,7 +83,7 @@ ONE more round (`max-rounds` 2 — never an open-ended crawl).
 
 ```bash
 # from repo root — tests (21/53 green)
-bb --classpath 20-actors -e '(require (quote [clojure.test :as t]) \
+kbb --classpath 20-actors -e '(require (quote [clojure.test :as t]) \
   (quote shirabe.tests.test-analyze) (quote shirabe.tests.test-retrieve) \
   (quote shirabe.tests.test-synthesize) (quote shirabe.tests.test-session) \
   (quote shirabe.tests.test-kotoba)) \
@@ -92,7 +92,7 @@ bb --classpath 20-actors -e '(require (quote [clojure.test :as t]) \
     (quote shirabe.tests.test-kotoba))'
 
 # LIVE: real DuckDuckGo search → real local gemma 4 E4B (Murakumo-conformant) → cited answer → kotoba Datom log
-bb --classpath 20-actors 20-actors/shirabe/methods/live.clj "青山の島田は今日やっている?" --asof 2026-06-13
+kbb --classpath 20-actors 20-actors/shirabe/methods/live.clj "青山の島田は今日やっている?" --asof 2026-06-13
 ```
 
 Verified live 2026-06-13: 6 real web sources → gemma 4 E4B answered『…本日は第2土曜日であり、定休日
