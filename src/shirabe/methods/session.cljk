@@ -14,7 +14,7 @@
   CONSTITUTIONAL:
     G3 — `research` takes only the question (+ injected legs + injected clock). No identity
       is bound unless a member signs the session downstream (G6, kotoba/session-datoms)."
-  (:require [shirabe.methods.analyze :as analyze]
+  (:require [kotoba.bytes :as kbytes] [shirabe.methods.analyze :as analyze]
             [shirabe.methods.retrieve :as retrieve]
             [shirabe.methods.synthesize :as synthesize]))
 
@@ -22,7 +22,7 @@
 
 (defn- session-id [question started-at]
   (let [md (java.security.MessageDigest/getInstance "SHA-256")
-        bs (.digest md (.getBytes (str question "\u0000" started-at) "UTF-8"))]
+        bs (.digest md (kbytes/utf8-bytes (str question "\u0000" started-at)))]
     (subs (apply str (map #(format "%02x" (bit-and % 0xff)) bs)) 0 16)))
 
 (defn research

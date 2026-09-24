@@ -3,7 +3,7 @@
   (:require [kotoba.test :refer [deftest is]]
             [kotoba.lang.text :as str]
             [kotoba.lang.edn :as edn]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [shirabe.methods.session :as session]
             [shirabe.methods.kotoba :as kotoba]))
 

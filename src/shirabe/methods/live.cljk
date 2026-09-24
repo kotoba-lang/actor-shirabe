@@ -13,13 +13,13 @@
 
     kbb --classpath 20-actors 20-actors/shirabe/methods/live.clj \"青山の島田は今日やっている?\" --asof 2026-06-13
     kbb --classpath 20-actors 20-actors/shirabe/methods/live.clj \"<q>\" --evidence <file.edn> [--infer http://127.0.0.1:11434]"
-  (:require [shirabe.methods.session :as session]
+  (:require [kotoba.http.form-urlencoded :as form-urlencoded] [shirabe.methods.session :as session]
             [shirabe.methods.synthesize :as synth]
             [shirabe.methods.kotoba :as kotoba]
             [babashka.http-client :as http]
             [cheshire.core :as json]
             [kotoba.lang.edn :as edn]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [kotoba.lang.text :as str]))
 
 ;; ── G1: read-only public-web search (DuckDuckGo HTML). Best-effort, fail-soft. ──
@@ -35,7 +35,7 @@
   unwrap to the real source URL so provenance in the Datom log points at the source, not DDG."
   [href]
   (if-let [m (re-find #"[?&]uddg=([^&]+)" href)]
-    (java.net.URLDecoder/decode (second m) "UTF-8")
+    (form-urlencoded/form-decode (second m))
     (if (str/starts-with? href "//") (str "https:" href) href)))
 
 (defn ddg-fetcher [query]

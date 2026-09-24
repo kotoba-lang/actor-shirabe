@@ -2,7 +2,7 @@
   "shirabe — session orchestrator e2e (fixture fetcher + infer). kotoba-clj."
   (:require [kotoba.test :refer [deftest is]]
             [kotoba.lang.edn :as edn]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [shirabe.methods.session :as session]))
 
 (def fx (edn/read-string (slurp (io/file (System/getProperty "user.dir") "data" "fixtures" "shimada-aoyama.kotoba.edn"))))
