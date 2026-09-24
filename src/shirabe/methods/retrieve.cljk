@@ -16,14 +16,14 @@
       tests pass a fixture fetcher; the live web leg (live.clj) is an operator/member step.
 
   A `fetcher` is any fn `(fn [query] -> [{:title _ :url _ :snippet _} ...])`."
-  (:require [kotoba.lang.text :as str]
-            [clojure.set :as set]))
+  (:require [kotoba.bytes :as kbytes] [kotoba.lang.text :as str]
+            [kotoba.lang.coll :as set]))
 
 (def top-k 6)   ;; G5 — bounded evidence; a synthesis prompt is not a firehose
 
 (defn- sha256-hex [^String s]
   (let [md (java.security.MessageDigest/getInstance "SHA-256")]
-    (apply str (map #(format "%02x" (bit-and % 0xff)) (.digest md (.getBytes s "UTF-8"))))))
+    (apply str (map #(format "%02x" (bit-and % 0xff)) (.digest md (kbytes/utf8-bytes s))))))
 
 (defn- cid
   "Content address a snippet (sha256, raw) — provenance + dedup, kotoba 'b'-prefix parity."
