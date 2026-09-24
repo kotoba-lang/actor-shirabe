@@ -19,7 +19,7 @@
       an unsigned/anonymous research session binds NO identity."
   (:require [kotoba.lang.text :as str]
             [clojure.edn :as edn]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [shirabe.methods.synthesize :as synthesize]))
 
 (defn- add [e a v] [:db/add e a v])
@@ -88,7 +88,7 @@
   [tx log-path]
   (let [f (io/file log-path)]
     (io/make-parents f)
-    (when-not (.exists f)
+    (when-not (io/exists? f)
       (spit f (str ";; shirabe 調べ — append-only kotoba Datom log (content-addressed DAG). "
                    "Transparent by construction (G5 相互監視). DO NOT hand-edit. ADR-2606131600.\n")))
     (spit f (str (tx->edn tx) "\n") :append true)
@@ -96,7 +96,7 @@
 
 (defn read-log [log-path]
   (let [f (io/file log-path)]
-    (if-not (.exists f) []
+    (if-not (io/exists? f) []
             (->> (str/split-lines (slurp f))
                  (map str/trim)
                  (remove #(or (str/blank? %) (str/starts-with? % ";")))
