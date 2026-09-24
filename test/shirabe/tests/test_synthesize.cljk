@@ -1,6 +1,6 @@
 (ns shirabe.tests.test-synthesize
   "shirabe — synthesize tests (G2 Murakumo-only allowlist / prompt / citations). kotoba-clj."
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [kotoba.lang.text :as str]
             [shirabe.methods.synthesize :as s]))
 
