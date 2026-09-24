@@ -1,4 +1,4 @@
-(require '[clojure.test :as t])
+(require '[kotoba.test :as t])
 (def suites '[shirabe.tests.test-analyze shirabe.tests.test-kotoba
               shirabe.tests.test-retrieve shirabe.tests.test-session
               shirabe.tests.test-synthesize shirabe.murakumo-test
