@@ -2,7 +2,7 @@
   "shirabe — kotoba Datomic write-path tests ([:db/add] shape / G2 / G6 / commit-DAG). kotoba-clj."
   (:require [kotoba.test :refer [deftest is]]
             [kotoba.lang.text :as str]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             [clojure.java.io :as io]
             [shirabe.methods.session :as session]
             [shirabe.methods.kotoba :as kotoba]))

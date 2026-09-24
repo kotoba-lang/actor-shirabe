@@ -1,7 +1,7 @@
 (ns shirabe.tests.test-session
   "shirabe — session orchestrator e2e (fixture fetcher + infer). kotoba-clj."
   (:require [kotoba.test :refer [deftest is]]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             [clojure.java.io :as io]
             [shirabe.methods.session :as session]))
 

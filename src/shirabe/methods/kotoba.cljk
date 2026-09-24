@@ -18,7 +18,7 @@
     G6 — privacy. `:shirabe.session/member` is emitted ONLY when a member SIGNED the session;
       an unsigned/anonymous research session binds NO identity."
   (:require [kotoba.lang.text :as str]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             [kotoba.io :as io]
             [shirabe.methods.synthesize :as synthesize]))
 
