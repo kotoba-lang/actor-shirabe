@@ -58,7 +58,7 @@ ONE more round (`max-rounds` 2 — never an open-ended crawl).
 
 ```
 20-actors/shirabe/
-├── CLAUDE.md                       # this file
+├── AGENTS.md                       # this file
 ├── manifest.jsonld                 # actor manifest (6 cells, 7 gates)
 ├── .gitignore                      # data/persisted, out (never committed)
 ├── data/fixtures/
